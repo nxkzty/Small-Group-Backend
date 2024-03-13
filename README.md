@@ -1,153 +1,32 @@
-# Backend REST API für die Fallstudie Blog
+# Small-Group-Webpage
+by Leon & Jeremy :)
 
-## Setup
+### Setup
+
+
 
 ```bash
    $ npm install
 ```
 
-(Im Projektroot ausführen)
-
-Server laufen lassen:
 
 ```bash
-   npm run dev
+   $ npm run dev
 ```
 
-Der Port kann in der Datei .env angepasst werden.
+Das Backend der Website läuft nun auf <http://localhost:9001>
 
-# Authentifizierung aktivieren
+In dev `.env` Datei müssen Folgende  Werte gesetzt werden: 
 
-Um die Authentifizierung zu aktivieren, muss in der Datei .env folgende Zeile gelöscht werden:
+`PORT=9001`
 
-```bash
-DISABLE_AUTH=true
-```
+`NODE_ENV=development`
 
-## Postman collection
+`SECRET_KEY=288c2e4187c38a7132a0e7717a8d29b4d3d7614d7204416a9f18b7d765f538866cb41c4d20b18f96ba3e755ea2d14625`
 
-Die Datei Fallstudie-backend.postman_collection.json kann in Postman importiert werden und enthält alle API Aufrufe.
+`DISABLE_AUTH=true`
 
-## Routen
 
-### POST /api/authenticate
+Um das Frontend zu runnen musst du die Schritte im Small-Group-Webpage README durchführen.
 
-Request:
-```json
-{
-    "email": "adamadmin@blog.ch",
-    "password": "admin1234"
-}
-```
-
-Response:
-
-```json
-{
-    "token": "ey...",
-    "user": {
-        "name": "Adam Admin"
-    }
-}
-```
-
-### GET /api/posts
-
-Response:
-
-```json
-[
-    {
-        "id": 3,
-        "title": "My trhid post",
-        "text": "First post text",
-        "createdAt": "2023-06-15T08:56:51.655Z",
-        "updatedAt": "2023-06-15T08:56:51.655Z"
-    },
-    {
-        "id": 2,
-        "title": "My second post",
-        "text": "First post text",
-        "createdAt": "2023-06-15T08:56:51.655Z",
-        "updatedAt": "2023-06-15T08:56:51.655Z"
-    },
-    {
-        "id": 1,
-        "title": "My first post",
-        "text": "First post text",
-        "createdAt": "2023-06-15T08:56:51.655Z",
-        "updatedAt": "2023-06-15T08:56:51.655Z"
-    }
-]
-```
-
-### GET /api/posts/:id
-
-/api/posts/1
-
-```json
-{
-    "id": 1,
-    "title": "My first post",
-    "text": "First post text",
-    "createdAt": "2023-06-15T08:56:51.655Z",
-    "updatedAt": "2023-06-15T08:56:51.655Z"
-}
-```
-
-### POST /api/posts
-
-Request:
-
-```json
-{
-    "title":"New post title",
-    "text": "New post text"
-}
-```
-
-Response:
-
-```json
-{
-    "id": 4,
-    "title": "New post title",
-    "text": "New post text",
-    "updatedAt": "2023-06-15T11:13:16.627Z",
-    "createdAt": "2023-06-15T11:13:16.627Z"
-}
-```
-
-### PUT /api/posts/:id
-
-Request:
-
-```json
-{
-    "id": 4,
-    "title": "Edited title",
-    "text": "Edited text"
-}
-```
-
-Response:
-
-```json
-{
-    "id": 4,
-    "title": "Edited title",
-    "text": "Edited text",
-    "createdAt": "2023-06-15T11:13:16.627Z",
-    "updatedAt": "2023-06-15T11:14:57.303Z"
-}
-```
-
-### DELETE /api/posts/:id
-
-Response:
-
-```json
-{
-    "message": "Post deleted"
-}
-```
+Falls das Frontend schon läuft kannst du die Website nun benutzen.
