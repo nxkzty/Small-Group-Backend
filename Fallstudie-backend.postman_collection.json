@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "ace6a420-d5d4-4fe2-8c51-547981d69c8b",
+		"name": "Fallstudie-backend",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"adamadmin@blog.ch\",\r\n    \"password\": \"admin1234\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/authenticate",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"authenticate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/authenticate",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "208"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"d0-keBXa8IwvvSvq6UhzvpVkVMsa70\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Jan 2023 18:26:08 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "Show post by id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/posts/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found / 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/posts/5asdsad",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"5asdsad"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-GNohuI+taxctZWwS+OSqb7eUlaY\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 30 Jan 2023 18:26:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "Show all posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/posts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/posts",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Create post",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"new post\",\r\n    \"text\": \"new post text\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/posts",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/posts",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Update post",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 4,\r\n    \"title\": \"new post edited\",\r\n    \"text\": \"new post text edited\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/posts/4",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"posts",
+						"4"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/posts/2",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Update post",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Updated title\"\r\n}"
+				},
+				"url": {
+					"raw": "{{baseURL}}/posts/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/posts/2",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"2"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		},
+		{
+			"name": "Delete post",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/posts/:id",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"posts",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "4"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "no response code found",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7Im5hbWUiOiJBZGFtIEFkbWluIn0sImlhdCI6MTY3NDY3NDg1MywiZXhwIjoxNjc0NjgyMDUzfQ.EXg3cEU-7yG9V-yelL2c7A3KztsH6RiVlWFnFqRmE1U"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/api/posts/1",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"api",
+								"posts",
+								"1"
+							]
+						}
+					},
+					"_postman_previewlanguage": "Text",
+					"header": [],
+					"cookie": [],
+					"body": ""
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "http://localhost:9001/api",
+			"type": "any"
+		}
+	]
+}

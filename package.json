@@ -1,0 +1,24 @@
+{
+  "name": "294-backend",
+  "type": "module",
+  "scripts": {
+    "dev": "node -r dotenv/config server.js",
+    "dev:watch": "node --watch -r dotenv/config server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-jwt": "^8.4.1",
+    "jsonwebtoken": "^9.0.0",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.32.1",
+    "sqlite3": "^5.1.6",
+    "yup": "^1.2.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "eslint": "^8.43.0"
+  }
+}
