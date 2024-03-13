@@ -3,7 +3,9 @@
   "type": "module",
   "scripts": {
     "dev": "node -r dotenv/config server.js",
-    "dev:watch": "node --watch -r dotenv/config server.js"
+    "dev:watch": "node --watch -r dotenv/config server.js",
+    "lint": "eslint .",
+    "start": "node -r dotenv/config server.js"
   },
   "dependencies": {
     "bcrypt": "^5.1.0",
