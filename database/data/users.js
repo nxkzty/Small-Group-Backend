@@ -1,3 +1,3 @@
 export default [
-    { name: "Adam Admin", email: "adamadmin@blog.ch", password: "admin1234" }
+    { name: "Admin", email: "admin@smallgroup.ch", password: "justin" }
 ]
